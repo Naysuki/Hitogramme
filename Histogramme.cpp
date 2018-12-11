@@ -41,6 +41,7 @@ Histogramme::Histogramme(double min, double max, int nbInter, double* data, int 
     m_max=max;
     m_min=min;
     m_data=new double[m_nbData];
+    m_data=data;
     m_nbData=nbData;
     m_vecInter=new double[m_nbInter];
 }
@@ -85,13 +86,8 @@ void Histogramme::affichage()
     }
     for(int i=0;i<m_nbData;i++)
     {
-        for(unsigned int j=0;j<m_nbInter;j++)
-        {
-            if((m_data[i]>m_min+j*((m_max-m_min)/m_nbInter))&&(m_data[i]<=m_min+(j+1)*((m_max-m_min)/m_nbInter)))
-            {
-                m_vecInter[j]++;
-            }
-        }
+        m_vecInter[(int)ceil(((m_data[i]-m_min)*m_nbInter)/(m_max-m_min))-1]++;
+        
     }
     for (int i=0; i<m_nbInter; i++)
     {
