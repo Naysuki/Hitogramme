@@ -1,4 +1,4 @@
 # Histogramme
-Create histogramm class 
+Create histogram class 
 
-Create histogramm class which can plot intervals and the value of these intervals
+Create histogram class which can plot intervals and the value of these intervals
