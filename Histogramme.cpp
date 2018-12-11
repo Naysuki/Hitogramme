@@ -41,6 +41,7 @@ Histogramme::Histogramme(double min, double max, int nbInter, double* data, int 
     m_max=max;
     m_min=min;
     m_data=new double[m_nbData];
+    m_data=data;
     m_nbData=nbData;
     m_vecInter=new double[m_nbInter];
 }
